@@ -7,7 +7,7 @@ import { mapMutations } from "vuex";
 export default {
   props: {
     bookName: String,
-    bookId: Number,
+    bookId: String,
   },
   methods: {
     ...mapMutations(["getChosenBook"]),

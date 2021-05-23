@@ -1,37 +1,67 @@
-import Teni from "../../assets/images/1.jpg";
-import Arka from "../../assets/images/2.jpg";
-import Tri from "../../assets/images/3.jpg";
-import Gizn from "../../assets/images/4.jpg";
-import Front from "../../assets/images/5.jpg";
-import Vozlube from "../../assets/images/6.jpg";
-import Vrema from "../../assets/images/7.jpg";
-import Obelisk from "../../assets/images/8.jpg";
-import Volk from "../../assets/images/10.jpg";
-import Serdca from "../../assets/images/9.jpg";
+import { v4 as uuidv4 } from "uuid";
+import Teni from "../../assets/images/remark/teniV.jpg";
+import Arka from "../../assets/images/remark/arka.jpg";
+import Tri from "../../assets/images/remark/triTov.jpg";
+import Gizn from "../../assets/images/remark/gizn.jpg";
+import Front from "../../assets/images/remark/naFronte.jpg";
+import Vozlube from "../../assets/images/remark/vozlube.jpg";
+import Vrema from "../../assets/images/remark/vrema.jpg";
+import Obelisk from "../../assets/images/remark/obelisk.jpg";
+import Volk from "../../assets/images/london/morVolk.jpg";
+import Serdca from "../../assets/images/london/sercaTrex.jpg";
 export default {
   state: {
     chosenBook: {},
     isBurgerOpen: false,
-    //isAddToBasket:false,
     thisSlide: 0,
+    chosenAuthor: "Э. М. Ремарк",
+    popularBooks: [
+      {
+        id: uuidv4(),
+        name: "Три товарища",
+        image: Tri,
+        price: 13,
+        bookDes:
+          "Трое друзей — Робби, отчаянный автогонщик Кестер и «последний романтик» Ленц прошли Первую мировую войну.Вернувшись в гражданскую жизнь, они основали небольшую автомастерскую.И хотя призраки прошлого преследуют их, они не унывают — ведь что может быть лучше дружбы, крепкой и верной, ради которой можно отдать последнее? Наверное, лишь только любовь, не знающая границ и пределов.Прекрасная и грустная Пат, нежная возлюбленная Робби, рассеивает мрак бессмысленности его существования.Однако обретенному счастью угрожают отголоски все той же войны – существующие уже не только в памяти и сознании героев, а суровым образом воплотившиеся в…",
+        isAddToBasket: false,
+      },
+      {
+        id: uuidv4(),
+        name: "Морской волк",
+        image: Volk,
+        price: 18,
+        bookDes:
+          "Увлекательный, напряженный приключенческий роман. Самое яркое из крупных произведений Джека Лондона, вошедшее в золотой фонд мировой беллетристики, не единожды экранизированное как на Западе, так и в нашей стране. Меняются времена, проходят десятилетия - но и сейчас, более века спустя после выхода романа, читателя не просто захватывает, а завораживает история смертельного противостояния чудом выжившего при кораблекрушении молодого писателя Хэмфри и его невольного спасителя и беспощадного врага - бесстрашного и жестокого капитана китобойного судна Волка Ларсена, полупирата, одержимого комплексом сверхчеловека...",
+        isAddToBasket: false,
+      },
+      {
+        id: uuidv4(),
+        name: "Триумфальная арка",
+        image: Arka,
+        price: 18,
+        bookDes:
+          "Предвоенный Париж. Главный герой, беженец Равик, нелегально работает хирургом в клинике, где постоянно сталкивается с болью и страданием людей. Переживший ужасы концлагеря и страх одиночества, он считает убийство гестаповца Хааке, упрятавшего в застенки изамучившего сотни своих соотечественников, не менее гуманным делом, чем спасение тяжелобольного пациента. Роман Эриха Марии Ремарка    Триумфальная арка написан в 1946 году.",
+        isAddToBasket: false,
+      },
+    ],
     slides: [
       {
-        id: 1,
+        id: uuidv4(),
         text:
           "То, чего не можешь заполучить, всегда кажется лучше того, что имеешь. В этом состоит романтика и идиотизм человеческой жизни.",
       },
       {
-        id: 2,
+        id: uuidv4(),
         text:
           "О счастье можно говорить минут пять, не больше. Тут ничего не скажешь, кроме того, что ты счастлив. А о несчастье люди рассказывают ночи напролет.",
       },
       {
-        id: 3,
+        id: uuidv4(),
         text:
           "Если хочешь что-либо сделать, никогда не спрашивай о последствиях. Иначе так ничего и не сделаешь.",
       },
       {
-        id: 4,
+        id: uuidv4(),
         text:
           "Ты можешь превратиться в архангела, шута, преступника – и никто этого не заметит. Но вот у тебя оторвалась, скажем, пуговица – и это сразу заметит каждый. До чего же глупо устроено все на свете.",
       },
@@ -42,7 +72,7 @@ export default {
         authorDescription: "ddddddddddddd",
         books: [
           {
-            id: 1,
+            id: uuidv4(),
             name: "Тени в раю",
             image: Teni,
             price: 16,
@@ -51,7 +81,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 2,
+            id: uuidv4(),
             name: "Триумфальная арка",
             image: Arka,
             price: 18,
@@ -60,7 +90,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 3,
+            id: uuidv4(),
             name: "Три товарища",
             image: Tri,
             price: 13,
@@ -69,7 +99,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 4,
+            id: uuidv4(),
             name: "Жизнь взаймы",
             image: Gizn,
             price: 15,
@@ -78,7 +108,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 5,
+            id: uuidv4(),
             name: "На западном фронте",
             image: Front,
             price: 15,
@@ -87,7 +117,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 6,
+            id: uuidv4(),
             name: "Возлюби ближнего",
             image: Vozlube,
             price: 15,
@@ -96,7 +126,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 7,
+            id: uuidv4(),
             name: "Время жить...",
             image: Vrema,
             price: 15,
@@ -105,7 +135,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 8,
+            id: uuidv4(),
             name: "Чёрный обелиск",
             image: Obelisk,
             price: 15,
@@ -117,10 +147,10 @@ export default {
       },
       {
         name: "Джек Лондон",
-        authorDescription: "",
+        authorDescription: "ssssssssssssssssssssss",
         books: [
           {
-            id: 11,
+            id: uuidv4(),
             name: "Морской волк",
             image: Volk,
             price: 18,
@@ -129,7 +159,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 21,
+            id: uuidv4(),
             name: "Сердца трёх",
             image: Serdca,
             price: 18,
@@ -138,7 +168,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 31,
+            id: uuidv4(),
             name: "Три товарища",
             image: Tri,
             price: 13,
@@ -147,7 +177,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 41,
+            id: uuidv4(),
             name: "Жизнь взаймы",
             image: Gizn,
             price: 15,
@@ -156,7 +186,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 51,
+            id: uuidv4(),
             name: "На западном фронте",
             image: Front,
             price: 15,
@@ -165,7 +195,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 61,
+            id: uuidv4(),
             name: "Возлюби ближнего",
             image: Vozlube,
             price: 15,
@@ -174,7 +204,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 71,
+            id: uuidv4(),
             name: "Время жить...",
             image: Vrema,
             price: 15,
@@ -183,7 +213,7 @@ export default {
             isAddToBasket: false,
           },
           {
-            id: 81,
+            id: uuidv4(),
             name: "Чёрный обелиск",
             image: Obelisk,
             price: 15,
@@ -193,17 +223,15 @@ export default {
           },
         ],
       },
-		],
-    chosenAuthor: "Э. М. Ремарк",
+    ],
     authors: [
       {
-        id: 1,
+        id: uuidv4(),
         name: "Э. М. Ремарк",
       },
       {
-        id: 2,
+        id: uuidv4(),
         name: "Джек Лондон",
-        description: "",
       },
     ],
   },
@@ -216,6 +244,9 @@ export default {
     },
     getChosenBook(state) {
       return state.chosenBook;
+    },
+    getPopularBooks(state) {
+      return state.popularBooks;
     },
     getIsBurgerOpen(state) {
       return state.isBurgerOpen;
@@ -248,11 +279,10 @@ export default {
       });
     },
     getChosenBook(state, id) {
-			state.allBooks.map((author) => {
-				author.books.map((book) => {
-					if (book.id === id) state.chosenBook = book;
-				})
-        
+      state.allBooks.map((author) => {
+        author.books.map((book) => {
+          if (book.id === id) state.chosenBook = book;
+        });
       });
     },
     openBurger(state) {
@@ -264,7 +294,6 @@ export default {
           book.isAddToBasket = true;
         }
       });
-      //state.isAddToBasket = !state.isAddToBasket;
     },
     nextSlide(state) {
       state.thisSlide = state.thisSlide + 1;

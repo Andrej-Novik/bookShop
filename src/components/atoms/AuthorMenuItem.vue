@@ -7,7 +7,7 @@ import { mapMutations } from "vuex";
 export default {
 	props: {
 		authorName: String,
-		authorId: Number
+		authorId: String
 	},
 	methods: {
 	...mapMutations(["changeAuthor"]),

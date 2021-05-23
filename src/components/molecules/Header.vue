@@ -1,17 +1,30 @@
 <template>
   <header :class="$style.header">
-    <div :class="$style.title">{{headerText}}</div>
-    <div :class="$style.burger">
+    <div :class="$style.title">{{ headerText }}</div>
+    <div
+      :class="[$style.burger, getIsBurgerOpen ? $style.burgerOpen : '']"
+      v-if="isBurher"
+      @click="onOpen"
+    >
       <span></span>
     </div>
   </header>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
-	props: {
-		headerText: String
-	}
+  props: {
+    headerText: String,
+    isBurher: Boolean,
+    getIsBurgerOpen: Boolean,
+  },
+  methods: {
+    ...mapMutations(["openBurger"]),
+    onOpen() {
+      this.openBurger();
+    },
+  },
 };
 </script>
 
