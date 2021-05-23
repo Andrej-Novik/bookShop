@@ -32,7 +32,7 @@ export default {
 .header {
   background-color: #000;
 	opacity: 0.6;
-  padding: 20px;
+  padding: 20px 15px;
   text-align: center;
   width: 100%;
   .title {

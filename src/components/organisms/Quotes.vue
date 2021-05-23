@@ -1,14 +1,46 @@
 <template>
-  <div :class="$style.slider">
-		<img src="../../assets/images/arrow.svg" alt="">
-		<div :class="$style.content"></div>
-		<img src="../../assets/images/arrow.svg" alt="">
-	</div>
+  <div :class="$style.quotes">
+    <img :class="$style.left" src="../../assets/images/arrow.svg" alt=""  @click="onPrev"/>
+    <div :class="$style.content" >{{quoteText}}</div>
+    <img src="../../assets/images/arrow.svg" alt="" @click="onNext"/>
+  </div>
 </template>
 
 <script>
-export default {};
+import { mapMutations } from "vuex";
+export default {
+  props: {
+		quoteText: String
+	},
+	methods: {
+    ...mapMutations(["nextQuote", "previosQuote"]),
+		onNext(){
+			this.nextQuote()
+		},
+		onPrev() {
+			this.previosQuote()
+		}
+  },
+};
 </script>
 
 <style lang="scss" module>
+.quotes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	padding: 15px 0;
+	margin: 0 0 25px 0;
+	font-size: 16px;
+  img {
+    width: 50px;
+    height: 20px;
+  }
+	.left{
+		transform: rotate(180deg);
+	}
+  .content {
+		padding: 0 5px;
+  }
+}
 </style>

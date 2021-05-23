@@ -28,7 +28,7 @@ export default {
   max-width: 1540px;
   margin: 0 auto;
 	min-height: 100vh;
-	background-color: #f1f1f1;
+	background: #f1f1f1;
   .book {
     max-width: 1200px;
     margin: 0 auto;
