@@ -9,13 +9,13 @@
           v-for="book in getChosenAuthor.books"
           :key="book.id"
           :bookId="book.id"
-         
         >
           <Book
             :bookName="book.name"
             :bookId="book.id"
             :bookImage="book.image"
             :bookPrice="book.price"
+						:isAddToBasket="book.isAddToBasket"
           />
         </div>
       </div>

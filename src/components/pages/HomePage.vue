@@ -71,10 +71,10 @@ export default {
   min-height: 100vh;
   background: #f1f1f1;
   .authorMenu {
-    padding: 15px 0;
+    padding: 18px 0;
     border-bottom: 2px solid #000;
     .menu {
-			padding: 0 15px;
+      padding: 0 15px;
       list-style-type: none;
       justify-content: space-between;
       display: flex;
@@ -83,6 +83,9 @@ export default {
       li {
         margin: 0 15px 0 0;
         font-size: 20px;
+        @media (max-width: 1100px) {
+          font-size: 18px;
+        }
         &:last-child {
           margin: 0;
         }
@@ -95,7 +98,7 @@ export default {
   .content {
     max-width: 1200px;
     margin: 0 auto;
-		padding: 0 15px;
+    padding: 0 15px;
   }
   .line {
     border-bottom: 2px solid #000;
@@ -103,10 +106,12 @@ export default {
   }
   .pictures {
     display: flex;
-    height: 200px;
     .picture {
       flex: 1 1 50%;
       height: 200px;
+      @media (max-width: 1100px) {
+        height: 150px;
+      }
       img {
         width: 100%;
         height: 100%;

@@ -3,7 +3,7 @@
 		<h2 :class="$style.title">Самые популярные книги</h2>
     <div :class="$style.content">
       <div :class="$style.book" v-for="book in getPopularBooks" :key="book.id">
-        <Book :bookImage="book.image" :bookName="book.name" :bookPrice="book.price"/>
+        <Book :bookImage="book.image" :bookName="book.name" :bookPrice="book.price" :isAddToBasket="book.isAddToBasket"/>
       </div>
     </div>
   </div>
