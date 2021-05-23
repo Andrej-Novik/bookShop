@@ -30,7 +30,8 @@ export default {
 
 <style lang="scss" module>
 .header {
-  background: #000;
+  background-color: #000;
+	opacity: 0.6;
   padding: 20px;
   text-align: center;
   width: 100%;
