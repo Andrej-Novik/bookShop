@@ -3,6 +3,7 @@
     <Header headerText="Sasha" />
     <div :class="$style.content">
       <div :class="$style.userInfo">
+        <h2 :class="$style.h">Пользователь</h2>
         <div :class="$style.user">
           <div :class="$style.ava">
             <img src="../../assets/images/ava.jpg" alt="" />
@@ -15,14 +16,16 @@
         </div>
       </div>
       <div :class="$style.basketBooks">
-        <div
-          :class="$style.book"
-          v-for="book in getBooksInBasket"
-          :key="book.id"
-        >
-          <Book :bookImage="book.image" price="" isAddToBasket="" read="" />
+        <h2 :class="$style.h2">Корзина</h2>
+        <div :class="$style.books">
+          <div
+            :class="$style.book"
+            v-for="book in getBooksInBasket"
+            :key="book.id"
+          >
+            <Book :bookImage="book.image" price="" isAddToBasket="" read="" />
+          </div>
         </div>
-			
       </div>
     </div>
   </div>
@@ -52,6 +55,17 @@ export default {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+    .h {
+      font-size: 25px;
+      font-weight: 700;
+      margin: 0 0 25px 0;
+    }
+    .h2 {
+      font-size: 25px;
+      font-weight: 700;
+			padding: 0 0 0 10px;
+      margin: 0 0 25px 0;
+    }
     .userInfo {
       flex: 0 1 40%;
 
@@ -87,12 +101,14 @@ export default {
     .basketBooks {
       margin: 0 -10px 0 10px;
       flex: 0 1 60%;
-      display: flex;
-      flex-wrap: wrap;
-      .book {
-        padding: 0 10px;
-        flex: 0 1 30%;
-        margin: 0 0 20px;
+      .books {
+        display: flex;
+        flex-wrap: wrap;
+        .book {
+          padding: 0 10px;
+          flex: 0 1 30%;
+          margin: 0 0 20px;
+        }
       }
     }
   }

@@ -6,6 +6,7 @@
     </div>
     <div :class="$style.title">{{ headerText }}</div>
     <div :class="$style.nav">
+      <img src="../../assets/images/logo.png" alt="" />
       <div :class="$style.main" @click="$router.push('/')">Главная</div>
       <div :class="$style.back" @click="$router.push('/books')">
         Страница автора
@@ -53,7 +54,7 @@ export default {
     align-items: center;
     top: 18px;
     right: 20px;
-		cursor: pointer;
+    cursor: pointer;
     img {
       width: 30px;
       height: 30px;
@@ -63,21 +64,32 @@ export default {
     div {
       font-size: 16px;
       color: #ffffff;
-			margin: 0 0 0 10px;
+      margin: 0 0 0 10px;
     }
   }
   .nav {
     display: flex;
     position: absolute;
-    top: 22px;
+    align-items: center;
+    top: 15px;
     left: 20px;
     @media (max-width: 1200px) {
       left: 15px;
     }
+    img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
     .main {
       color: #ffffff;
       font-size: 20px;
+      margin: 0 0 0 25px;
       cursor: pointer;
+      @media (max-width: 1200px) {
+        margin: 0 0 0 15px;
+				font-size: 18px;
+      }
     }
     .back {
       position: relative;
@@ -85,6 +97,10 @@ export default {
       font-size: 20px;
       margin: 0 0 0 25px;
       cursor: pointer;
+      @media (max-width: 1200px) {
+        margin: 0 0 0 15px;
+				font-size: 18px;
+      }
     }
   }
 
