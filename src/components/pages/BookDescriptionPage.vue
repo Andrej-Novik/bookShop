@@ -3,8 +3,9 @@
     <Header :headerText="getChosenBook.name" />
     <div :class="$style.book">
       <Book
+        :isBuy="getChosenBook.isBuy"
         :bookImage="getChosenBook.image"
-				:bookName="getChosenBook.name"
+        :bookName="getChosenBook.name"
         :bookPrice="getChosenBook.price"
         :isAddToBasket="getChosenBook.isAddToBasket"
         read=""
@@ -41,11 +42,11 @@ export default {
     padding: 50px 15px 0 15px;
     display: flex;
     .description {
-			padding: 20px 0 0 0;
+      padding: 20px 0 0 0;
       margin: 0 0 0 15px;
       font-size: 16px;
       line-height: 20px;
-			max-width: 600px;
+      max-width: 600px;
     }
   }
 }

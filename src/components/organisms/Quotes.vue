@@ -37,7 +37,10 @@ export default {
   padding: 15px 0;
   margin: 0 0 25px 0;
   font-size: 16px;
-
+	.content{
+		flex: 1;
+		text-align: center;
+	}
   img {
     width: 50px;
     height: 20px;

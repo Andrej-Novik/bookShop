@@ -1,7 +1,10 @@
 <template>
   <div :class="$style.page">
     <Header :headerText="getChosenAuthor.name" />
-    <AuthorDescription :authorDescription="getChosenAuthor.authorDescription" :authorImage="getChosenAuthor.image" />
+    <AuthorDescription
+      :authorDescription="getChosenAuthor.authorDescription"
+      :authorImage="getChosenAuthor.image"
+    />
     <div :class="$style.books">
       <div :class="$style.booksContent">
         <div
@@ -11,11 +14,12 @@
           :bookId="book.id"
         >
           <Book
+            :isBuy="book.isBuy"
             :bookName="book.name"
             :bookId="book.id"
             :bookImage="book.image"
             :bookPrice="book.price"
-						:isAddToBasket="book.isAddToBasket"
+            :isAddToBasket="book.isAddToBasket"
           />
         </div>
       </div>
@@ -42,12 +46,12 @@ export default {
 .page {
   max-width: 1540px;
   margin: 0 auto;
-	min-height: 100vh;
-	background: #f1f1f1;
+  min-height: 100vh;
+  background: #f1f1f1;
   .books {
     max-width: 1200px;
     margin: 0 auto;
-		padding: 0 15px;
+    padding: 0 15px;
     .booksContent {
       display: flex;
       flex-wrap: wrap;

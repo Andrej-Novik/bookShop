@@ -14,9 +14,19 @@
     >
       читать описание
     </div>
-    <div  v-if="!price" :class="$style.price">{{ bookPrice }} $</div>
-    <div v-if="!isAddToBasket" :class="$style.add" @click="add">добавить в корзину</div>
-		<div v-else :class="$style.adding">добавлено</div>
+    <div v-if="!buy">
+      <div v-if="!isBuy" :class="$style.price" @click="Buy">
+        купить{{ " " }}{{ bookPrice }} $
+      </div>
+      <div v-else :class="$style.price">куплено</div>
+    </div>
+		<div v-else></div>
+    <div v-if="!isBasket">
+      <div v-if="!isAddToBasket" :class="$style.add" @click="add">
+        добавить в корзину
+      </div>
+      <div v-else :class="$style.adding">добавлено</div>
+    </div>
   </div>
 </template>
 
@@ -29,17 +39,24 @@ export default {
     bookImage: String,
     bookPrice: Number,
     read: Boolean,
-		price: Boolean,
-		isAddToBasket: Boolean
+    price: Boolean,
+    isBuy: Boolean,
+    isAddToBasket: Boolean,
+    isBasket: Boolean,
+		buy: Boolean
   },
   methods: {
-    ...mapMutations(["setChosenBook", "addToBasket"]),
+    ...mapMutations(["setChosenBook", "addToBasket", "buyBook"]),
     onGiveInfo() {
       this.setChosenBook(this.bookName);
     },
-		add() {
-			this.addToBasket(this.bookName);
-		}
+    add() {
+      this.addToBasket(this.bookName);
+    },
+    Buy() {
+      console.log("yoo");
+      this.buyBook(this.bookName);
+    },
   },
 };
 </script>
@@ -58,8 +75,7 @@ export default {
   flex-direction: column;
   .image {
     max-width: 170px;
-		min-width: 128px;
-    margin: 0 0 10px 0;
+    min-width: 128px;
     cursor: pointer;
     border-radius: 8px;
     overflow: hidden;
@@ -70,23 +86,26 @@ export default {
     }
   }
   .read {
-    margin: 0 0 10px 0;
+    margin: 10px 0 0 0;
     font-size: 17px;
     cursor: pointer;
   }
   .price {
-    margin: 0 0 7px 0;
+    margin: 7px 0 0 0;
     font-size: 16px;
     color: #439a86;
+    cursor: pointer;
   }
-	.add{
-		cursor: pointer;
-		font-size: 16px;
-	}
-	.adding{
-		cursor: pointer;
-		font-size: 16px;
-		color: #d3d3d3;
-	}
+  .add {
+    margin: 7px 0 0 0;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .adding {
+    margin: 7px 0 0 0;
+    cursor: pointer;
+    font-size: 16px;
+    color: #d3d3d3;
+  }
 }
 </style>

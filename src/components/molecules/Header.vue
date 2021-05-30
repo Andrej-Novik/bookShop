@@ -1,16 +1,21 @@
 <template>
   <header :class="$style.header">
-    <div :class="$style.profile" @click="$router.push('/user')">
-      <img src="../../assets/images/ava.jpg" alt="" />
-      <div>Sasha</div>
-    </div>
     <div :class="$style.title">{{ headerText }}</div>
-    <div :class="$style.nav">
+    <div :class="$style.logo">
       <img src="../../assets/images/logo.png" alt="" />
+      <div :class="$style.name">LAST BOOK</div>
+    </div>
+    <div :class="$style.profile">
       <div :class="$style.main" @click="$router.push('/')">Главная</div>
       <div :class="$style.back" @click="$router.push('/books')">
         Страница автора
       </div>
+      <img
+        src="../../assets/images/ava.jpg"
+        alt=""
+        @click="$router.push('/user')"
+      />
+      <div :class="$style.name" @click="$router.push('/user')">Sasha</div>
     </div>
     <!--<div
       :class="[$style.burger, getIsBurgerOpen ? $style.burgerOpen : '']"
@@ -61,13 +66,33 @@ export default {
       border-radius: 50%;
       overflow: hidden;
     }
-    div {
+    .name {
       font-size: 16px;
       color: #ffffff;
-      margin: 0 0 0 10px;
+      margin: 0 0 0 5px;
+    }
+    .main {
+      color: #ffffff;
+      font-size: 20px;
+      margin: 0 0 0 25px;
+      cursor: pointer;
+      @media (max-width: 1200px) {
+        margin: 0 0 0 15px;
+        font-size: 18px;
+      }
+    }
+    .back {
+      color: #ffffff;
+      font-size: 20px;
+      margin: 0 25px 0 25px;
+      cursor: pointer;
+      @media (max-width: 1200px) {
+        margin: 0 15px 0 15px;
+        font-size: 18px;
+      }
     }
   }
-  .nav {
+  .logo {
     display: flex;
     position: absolute;
     align-items: center;
@@ -81,27 +106,11 @@ export default {
       height: 35px;
       border-radius: 50%;
     }
-    .main {
-      color: #ffffff;
-      font-size: 20px;
-      margin: 0 0 0 25px;
-      cursor: pointer;
-      @media (max-width: 1200px) {
-        margin: 0 0 0 15px;
-				font-size: 18px;
-      }
-    }
-    .back {
-      position: relative;
-      color: #ffffff;
-      font-size: 20px;
-      margin: 0 0 0 25px;
-      cursor: pointer;
-      @media (max-width: 1200px) {
-        margin: 0 0 0 15px;
-				font-size: 18px;
-      }
-    }
+		.name{
+			color: #ffffff;
+			margin: 0 0 0 10px;
+			font-size: 20px;
+		}
   }
 
   .title {
